@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<block>
+  <name>Build hubsan packet</name>
+  <key>hubsan_build_packet_f</key>
+  <category>hubsan</category>
+  <import>import hubsan</import>
+  <make>hubsan.build_packet_f()</make>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>
