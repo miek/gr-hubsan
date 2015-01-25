@@ -4,8 +4,17 @@
   <key>hubsan_build_packet_f</key>
   <category>hubsan</category>
   <import>import hubsan</import>
-  <make>hubsan.build_packet_f()</make>
-
+  <make>hubsan.build_packet_f($a7105_id, $tx_id)</make>
+  <param>
+    <name>A7105 ID</name>
+    <key>a7105_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>TX ID</name>
+    <key>tx_id</key>
+    <type>int</type>
+  </param>
   <source>
     <name>out</name>
     <type>float</type>

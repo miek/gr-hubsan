@@ -30,11 +30,14 @@ class build_packet_f(gr.sync_block):
     """
     docstring for block build_packet_f
     """
-    def __init__(self):
+    def __init__(self, a7105_id, tx_id):
         gr.sync_block.__init__(self,
             name="build_packet_f",
             in_sig=None,
             out_sig=[numpy.float32])
+
+        self.a7105_id = a7105_id
+        self.tx_id = tx_id
 
         self.sample_count = 0
 
@@ -54,9 +57,7 @@ class build_packet_f(gr.sync_block):
             if self.sample_count < 192:
                 # Transmit packet
                 if self.sample_count == 0:
-                    #self.pkt = bitarray.bitarray('101010101010101010101010101010101010001001001001110101110000010000100000000000000000101100000000011111010000000010000000000000000111111000000010011000010100011001010010000000001010101110110100')
-                    #self.pkt = bitarray.bitarray('101010101010101010101010101010101111111000000111011111000100001001000000000000000010011000000000111110100000000100000000000000001111110000000100110000101000110010100100000000010101011101011001')
-                    self.pkt = self.build_packet(18916740, self.get_value('T'), self.get_value('Y'), self.get_value('P'), self.get_value('R'), 1179779243)
+                    self.pkt = self.build_packet(self.a7105_id, self.get_value('T'), self.get_value('Y'), self.get_value('P'), self.get_value('R'), self.tx_id)
                 out[i] = self.bool_to_sym(self.pkt[self.sample_count])
             else:
                 # Transmit padding between packets
