@@ -101,7 +101,11 @@ class build_packet_f(gr.sync_block):
         current_value, min_value, max_value = self.control_values[axis]
         if current_value < 0:
             return 0
-        return (current_value - min_value) * 256 / (max_value - min_value + 1)
+        if axis == 'T':
+            throttle = (current_value - min_value) * 256 / (max_value - min_value + 1)
+            return throttle if throttle > 10 else 0
+        else:
+            return ((current_value - min_value) * 128 / (max_value - min_value + 1)) + 64
 
     def print_values(self):
         print "T: %d P: %d R: %d Y: %d" % tuple([self.get_value(c) for c in "TPRY"])
