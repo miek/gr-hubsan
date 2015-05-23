@@ -18,5 +18,5 @@
 # Boston, MA 02110-1301, USA.
 install(FILES
     hubsan_build_packet_b.xml
-    DESTINATION share/gnuradio/grc/blocks
+    hubsan_packet_decoder_b.xml DESTINATION share/gnuradio/grc/blocks
 )
