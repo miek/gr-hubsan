@@ -31,5 +31,4 @@ except ImportError:
 	pass
 
 # import any pure python here
-from build_packet_f import build_packet_f
 #

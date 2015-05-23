@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
+    build_packet_b.h
     DESTINATION include/hubsan
 )

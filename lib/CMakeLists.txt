@@ -24,9 +24,9 @@ include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
-
 list(APPEND hubsan_sources
-)
+    build_packet_b_impl.cc
+    )
 
 set(hubsan_sources "${hubsan_sources}" PARENT_SCOPE)
 if(NOT hubsan_sources)
