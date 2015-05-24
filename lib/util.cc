@@ -18,35 +18,27 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_HUBSAN_PACKET_DECODER_B_IMPL_H
-#define INCLUDED_HUBSAN_PACKET_DECODER_B_IMPL_H
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
 
-#include <hubsan/packet_decoder_b.h>
+#include <gnuradio/io_signature.h>
+#include "packet_decoder_b_impl.h"
 
 namespace gr {
   namespace hubsan {
-
-    class packet_decoder_b_impl : public packet_decoder_b
+    uint8_t generate_checksum(uint8_t *data, int length)
     {
-     private:
-      pmt::pmt_t out_port;
-      uint8_t data[24];
+      uint8_t sum = 0;
+      for (int i = 0; i < length; i++) {
+        sum += data[i];
+      }
+      return 256 - sum;
+    }
 
-      void shift_data_in(bool bit);
-      void check_valid_packet();
-
-     public:
-      packet_decoder_b_impl();
-      ~packet_decoder_b_impl();
-
-      // Where all the action really happens
-      int work(int noutput_items,
-	       gr_vector_const_void_star &input_items,
-	       gr_vector_void_star &output_items);
-    };
-
-  } // namespace hubsan
-} // namespace gr
-
-#endif /* INCLUDED_HUBSAN_PACKET_DECODER_B_IMPL_H */
+    uint16_t _bswap16(uint16_t x) {
+      return (x << 8) | (x >> 8);
+    }
+  } /* namespace hubsan */
+} /* namespace gr */
 

@@ -18,35 +18,19 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_HUBSAN_PACKET_DECODER_B_IMPL_H
-#define INCLUDED_HUBSAN_PACKET_DECODER_B_IMPL_H
+#ifndef INCLUDED_HUBSAN_UTIL_H
+#define INCLUDED_HUBSAN_UTIL_H
 
 #include <hubsan/packet_decoder_b.h>
 
 namespace gr {
   namespace hubsan {
 
-    class packet_decoder_b_impl : public packet_decoder_b
-    {
-     private:
-      pmt::pmt_t out_port;
-      uint8_t data[24];
-
-      void shift_data_in(bool bit);
-      void check_valid_packet();
-
-     public:
-      packet_decoder_b_impl();
-      ~packet_decoder_b_impl();
-
-      // Where all the action really happens
-      int work(int noutput_items,
-	       gr_vector_const_void_star &input_items,
-	       gr_vector_void_star &output_items);
-    };
+    uint8_t generate_checksum(uint8_t *data, int length);
+    uint16_t _bswap16(uint16_t x);
 
   } // namespace hubsan
 } // namespace gr
 
-#endif /* INCLUDED_HUBSAN_PACKET_DECODER_B_IMPL_H */
+#endif /* INCLUDED_HUBSAN_UTIL_H */
 
