@@ -23,5 +23,6 @@
 install(FILES
     api.h
     build_packet_b.h
+    joystick_source_f.h
     packet_decoder_b.h DESTINATION include/hubsan
 )

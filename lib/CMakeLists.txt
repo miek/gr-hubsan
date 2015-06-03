@@ -26,6 +26,7 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND hubsan_sources
     build_packet_b_impl.cc
+    joystick_source_f_impl.cc
     packet_decoder_b_impl.cc
     util.cc )
 
