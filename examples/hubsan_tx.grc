@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <?grc format='1' created='3.7.8'?>
 <flow_graph>
-  <timestamp>Sun Nov 23 18:12:57 2014</timestamp>
+  <timestamp>Sun May 31 11:41:44 2015</timestamp>
   <block>
     <key>options</key>
     <param>
       <key>author</key>
-      <value></value>
+      <value>Mike Walters</value>
     </param>
     <param>
       <key>alias</key>
@@ -26,7 +26,7 @@
     </param>
     <param>
       <key>description</key>
-      <value></value>
+      <value>Based on gr-fsk-burst by Tim O'Shea</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -34,7 +34,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 3)</value>
+      <value>(10, 10)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -42,11 +42,11 @@
     </param>
     <param>
       <key>generate_options</key>
-      <value>wx_gui</value>
+      <value>qt_gui</value>
     </param>
     <param>
       <key>id</key>
-      <value>hubsan_rx</value>
+      <value>hubsan_tx</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -58,7 +58,7 @@
     </param>
     <param>
       <key>run_options</key>
-      <value>run</value>
+      <value>prompt</value>
     </param>
     <param>
       <key>run</key>
@@ -70,7 +70,7 @@
     </param>
     <param>
       <key>title</key>
-      <value></value>
+      <value>Hubsan Controller</value>
     </param>
   </block>
   <block>
@@ -85,7 +85,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 67)</value>
+      <value>(96, 123)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -93,11 +93,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>bb_rate</value>
+      <value>data_rate</value>
     </param>
     <param>
       <key>value</key>
-      <value>20e6</value>
+      <value>100e3</value>
     </param>
   </block>
   <block>
@@ -112,7 +112,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(88, 67)</value>
+      <value>(8, 187)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -120,7 +120,34 @@
     </param>
     <param>
       <key>id</key>
-      <value>decim1</value>
+      <value>dev</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>186e3</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 259)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>interp</value>
     </param>
     <param>
       <key>value</key>
@@ -128,7 +155,7 @@
     </param>
   </block>
   <block>
-    <key>variable</key>
+    <key>variable_rrc_filter_taps</key>
     <param>
       <key>comment</key>
       <value></value>
@@ -138,20 +165,36 @@
       <value>True</value>
     </param>
     <param>
+      <key>alpha</key>
+      <value>0.35</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(8, 131)</value>
+      <value>(656, 451)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
-      <key>id</key>
-      <value>decim2</value>
+      <key>gain</key>
+      <value>1.0</value>
     </param>
     <param>
-      <key>value</key>
-      <value>5</value>
+      <key>id</key>
+      <value>rrc_taps</value>
+    </param>
+    <param>
+      <key>ntaps</key>
+      <value>21</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>sym_rate</key>
+      <value>dev*2</value>
     </param>
   </block>
   <block>
@@ -166,34 +209,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 291)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>freq</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>2.460e9</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 203)</value>
+      <value>(8, 123)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -205,7 +221,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>bb_rate / decim1 / decim2</value>
+      <value>800e3</value>
     </param>
   </block>
   <block>
@@ -220,34 +236,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 355)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>shift</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>1e6</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(80, 131)</value>
+      <value>(96, 187)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -259,38 +248,11 @@
     </param>
     <param>
       <key>value</key>
-      <value>4</value>
+      <value>samp_rate/data_rate</value>
     </param>
   </block>
   <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 419)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>tau</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>math.pi * 2</value>
-    </param>
-  </block>
-  <block>
-    <key>analog_quadrature_demod_cf</key>
+    <key>pyqt_pdu_lambda</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -309,50 +271,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 35)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>gain</key>
-      <value>(bb_rate/decim1)/(tau*186e3)</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_quadrature_demod_cf_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_debug</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(808, 328)</value>
+      <value>(384, 147)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -360,85 +279,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>blocks_message_debug_0</value>
-    </param>
-  </block>
-  <block>
-    <key>digital_binary_slicer_fb</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(432, 353)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>digital_binary_slicer_fb_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>digital_clock_recovery_mm_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(208, 315)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>gain_mu</key>
-      <value>0.175</value>
-    </param>
-    <param>
-      <key>gain_omega</key>
-      <value>0.25*0.175*0.175</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>digital_clock_recovery_mm_xx_0</value>
+      <value>bits_to_symbols</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -449,24 +290,114 @@
       <value>0</value>
     </param>
     <param>
-      <key>mu</key>
-      <value>0.5</value>
+      <key>fn</key>
+      <value>lambda x: numpy.array(x, dtype=numpy.float32)*2-1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_message_strobe</key>
+    <param>
+      <key>alias</key>
+      <value></value>
     </param>
     <param>
-      <key>omega_relative_limit</key>
-      <value>0.005</value>
+      <key>comment</key>
+      <value></value>
     </param>
     <param>
-      <key>omega</key>
-      <value>sps</value>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(336, 59)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_message_strobe_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>msg</key>
+      <value>pmt.intern("FLY")</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>period</key>
+      <value>10</value>
+    </param>
+  </block>
+  <block>
+    <key>es_source</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>eb</key>
+      <value>asap</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(384, 385)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>nthreads</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>es_source_0</value>
     </param>
     <param>
       <key>type</key>
-      <value>float</value>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_streams</key>
+      <value>1</value>
     </param>
   </block>
   <block>
-    <key>fir_filter_xxx</key>
+    <key>pyqt_pdu_lambda</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -480,16 +411,12 @@
       <value></value>
     </param>
     <param>
-      <key>decim</key>
-      <value>decim2</value>
-    </param>
-    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 195)</value>
+      <value>(384, 291)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -497,7 +424,218 @@
     </param>
     <param>
       <key>id</key>
-      <value>fir_filter_xxx_0</value>
+      <value>fsk_modulator</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>fn</key>
+      <value>lambda x: numpy.array(numpy.exp(1j*2*numpy.pi*((dev*x*numpy.arange(len(x)))/samp_rate)),dtype="complex64")</value>
+    </param>
+  </block>
+  <block>
+    <key>pyqt_pdu_lambda</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(384, 219)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>fsk_modulator_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>fn</key>
+      <value>lambda x: numpy.tile(x,[sps,1]).T.reshape([1,len(x)*sps])</value>
+    </param>
+  </block>
+  <block>
+    <key>hubsan_build_packet_b</key>
+    <param>
+      <key>a7105_id</key>
+      <value>1746746778</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(536, 27)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>hubsan_build_packet_b_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>sps</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>tx_id</key>
+      <value>1179779243</value>
+    </param>
+  </block>
+  <block>
+    <key>hubsan_joystick_source_f</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(336, 17)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>hubsan_joystick_source_f_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>import</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(192, 11)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>import_0</value>
+    </param>
+    <param>
+      <key>import</key>
+      <value>import numpy</value>
+    </param>
+  </block>
+  <block>
+    <key>interp_fir_filter_xxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(648, 387)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>interp_fir_filter_xxx_0</value>
+    </param>
+    <param>
+      <key>interp</key>
+      <value>interp</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -513,66 +651,7 @@
     </param>
     <param>
       <key>taps</key>
-      <value>firdes.low_pass(1.0, bb_rate / decim1, 100e3, 50e3)</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>fff</value>
-    </param>
-  </block>
-  <block>
-    <key>freq_xlating_fir_filter_xxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>center_freq</key>
-      <value>-shift</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>decim</key>
-      <value>decim1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(440, 11)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>freq_xlating_fir_filter_xxx_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>bb_rate</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value>firdes.low_pass(1.0, bb_rate, 2e6, 1e6)</value>
+      <value>rrc_taps</value>
     </param>
     <param>
       <key>type</key>
@@ -580,7 +659,7 @@
     </param>
   </block>
   <block>
-    <key>hubsan_packet_decoder_b</key>
+    <key>note</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -590,7 +669,34 @@
       <value></value>
     </param>
     <param>
-      <key>affinity</key>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(200, 147)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_0</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value>bits to syms</value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
       <value></value>
     </param>
     <param>
@@ -599,7 +705,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(584, 353)</value>
+      <value>(200, 219)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -607,19 +713,46 @@
     </param>
     <param>
       <key>id</key>
-      <value>hubsan_packet_decoder_b_0</value>
+      <value>note_0_0</value>
     </param>
     <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
+      <key>note</key>
+      <value>interp samp/sym</value>
     </param>
   </block>
   <block>
-    <key>osmosdr_source</key>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(200, 291)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_0_0_0</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value>fsk mod</value>
+    </param>
+  </block>
+  <block>
+    <key>osmosdr_sink</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -630,39 +763,27 @@
     </param>
     <param>
       <key>bb_gain0</key>
-      <value>10</value>
+      <value>30</value>
     </param>
     <param>
       <key>bw0</key>
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode0</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr0</key>
-      <value>5</value>
+      <value>0</value>
     </param>
     <param>
       <key>freq0</key>
-      <value>freq + shift</value>
-    </param>
-    <param>
-      <key>gain_mode0</key>
-      <value>False</value>
+      <value>2.46e9</value>
     </param>
     <param>
       <key>if_gain0</key>
-      <value>16</value>
-    </param>
-    <param>
-      <key>iq_balance_mode0</key>
-      <value>0</value>
+      <value>30</value>
     </param>
     <param>
       <key>gain0</key>
-      <value>0</value>
+      <value>14</value>
     </param>
     <param>
       <key>ant10</key>
@@ -677,10 +798,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode10</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr10</key>
       <value>0</value>
     </param>
@@ -689,16 +806,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode10</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain10</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode10</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain10</key>
@@ -717,10 +826,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode11</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr11</key>
       <value>0</value>
     </param>
@@ -729,16 +834,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode11</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain11</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode11</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain11</key>
@@ -757,10 +854,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode12</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr12</key>
       <value>0</value>
     </param>
@@ -769,16 +862,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode12</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain12</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode12</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain12</key>
@@ -797,10 +882,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode13</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr13</key>
       <value>0</value>
     </param>
@@ -809,16 +890,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode13</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain13</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode13</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain13</key>
@@ -837,10 +910,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode14</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr14</key>
       <value>0</value>
     </param>
@@ -849,16 +918,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode14</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain14</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode14</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain14</key>
@@ -877,10 +938,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode15</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr15</key>
       <value>0</value>
     </param>
@@ -889,16 +946,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode15</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain15</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode15</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain15</key>
@@ -917,10 +966,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode16</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr16</key>
       <value>0</value>
     </param>
@@ -929,16 +974,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode16</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain16</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode16</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain16</key>
@@ -957,10 +994,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode17</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr17</key>
       <value>0</value>
     </param>
@@ -969,16 +1002,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode17</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain17</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode17</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain17</key>
@@ -997,10 +1022,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode18</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr18</key>
       <value>0</value>
     </param>
@@ -1009,16 +1030,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode18</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain18</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode18</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain18</key>
@@ -1037,10 +1050,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode19</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr19</key>
       <value>0</value>
     </param>
@@ -1049,16 +1058,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode19</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain19</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode19</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain19</key>
@@ -1077,10 +1078,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode1</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr1</key>
       <value>0</value>
     </param>
@@ -1089,16 +1086,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode1</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain1</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode1</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain1</key>
@@ -1117,10 +1106,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode20</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr20</key>
       <value>0</value>
     </param>
@@ -1129,16 +1114,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode20</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain20</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode20</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain20</key>
@@ -1157,10 +1134,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode21</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr21</key>
       <value>0</value>
     </param>
@@ -1169,16 +1142,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode21</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain21</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode21</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain21</key>
@@ -1197,10 +1162,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode22</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr22</key>
       <value>0</value>
     </param>
@@ -1209,16 +1170,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode22</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain22</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode22</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain22</key>
@@ -1237,10 +1190,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode23</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr23</key>
       <value>0</value>
     </param>
@@ -1249,16 +1198,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode23</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain23</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode23</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain23</key>
@@ -1277,10 +1218,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode24</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr24</key>
       <value>0</value>
     </param>
@@ -1289,16 +1226,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode24</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain24</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode24</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain24</key>
@@ -1317,10 +1246,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode25</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr25</key>
       <value>0</value>
     </param>
@@ -1329,16 +1254,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode25</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain25</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode25</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain25</key>
@@ -1357,10 +1274,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode26</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr26</key>
       <value>0</value>
     </param>
@@ -1369,16 +1282,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode26</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain26</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode26</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain26</key>
@@ -1397,10 +1302,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode27</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr27</key>
       <value>0</value>
     </param>
@@ -1409,16 +1310,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode27</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain27</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode27</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain27</key>
@@ -1437,10 +1330,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode28</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr28</key>
       <value>0</value>
     </param>
@@ -1449,16 +1338,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode28</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain28</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode28</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain28</key>
@@ -1477,10 +1358,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode29</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr29</key>
       <value>0</value>
     </param>
@@ -1489,16 +1366,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode29</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain29</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode29</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain29</key>
@@ -1517,10 +1386,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode2</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr2</key>
       <value>0</value>
     </param>
@@ -1529,16 +1394,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode2</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain2</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode2</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain2</key>
@@ -1557,10 +1414,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode30</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr30</key>
       <value>0</value>
     </param>
@@ -1569,16 +1422,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode30</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain30</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode30</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain30</key>
@@ -1597,10 +1442,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode31</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr31</key>
       <value>0</value>
     </param>
@@ -1609,16 +1450,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode31</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain31</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode31</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain31</key>
@@ -1637,10 +1470,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode3</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr3</key>
       <value>0</value>
     </param>
@@ -1649,16 +1478,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode3</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain3</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode3</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain3</key>
@@ -1677,10 +1498,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode4</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr4</key>
       <value>0</value>
     </param>
@@ -1689,16 +1506,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode4</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain4</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode4</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain4</key>
@@ -1717,10 +1526,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode5</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr5</key>
       <value>0</value>
     </param>
@@ -1729,16 +1534,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode5</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain5</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode5</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain5</key>
@@ -1757,10 +1554,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode6</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr6</key>
       <value>0</value>
     </param>
@@ -1769,16 +1562,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode6</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain6</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode6</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain6</key>
@@ -1797,10 +1582,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode7</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr7</key>
       <value>0</value>
     </param>
@@ -1809,16 +1590,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode7</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain7</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode7</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain7</key>
@@ -1837,10 +1610,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode8</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr8</key>
       <value>0</value>
     </param>
@@ -1849,16 +1618,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode8</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain8</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode8</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain8</key>
@@ -1877,10 +1638,6 @@
       <value>0</value>
     </param>
     <param>
-      <key>dc_offset_mode9</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>corr9</key>
       <value>0</value>
     </param>
@@ -1889,16 +1646,8 @@
       <value>100e6</value>
     </param>
     <param>
-      <key>gain_mode9</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>if_gain9</key>
       <value>20</value>
-    </param>
-    <param>
-      <key>iq_balance_mode9</key>
-      <value>0</value>
     </param>
     <param>
       <key>gain9</key>
@@ -1914,15 +1663,15 @@
     </param>
     <param>
       <key>args</key>
-      <value>hackrf=0</value>
+      <value></value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 11)</value>
+      <value>(880, 387)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1930,11 +1679,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>osmosdr_source_0</value>
+      <value>osmosdr_sink_0</value>
     </param>
     <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
+      <key>type</key>
+      <value>fc32</value>
     </param>
     <param>
       <key>clock_source0</key>
@@ -2001,10 +1750,6 @@
       <value></value>
     </param>
     <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>nchan</key>
       <value>1</value>
     </param>
@@ -2013,12 +1758,8 @@
       <value>1</value>
     </param>
     <param>
-      <key>type</key>
-      <value>fc32</value>
-    </param>
-    <param>
       <key>sample_rate</key>
-      <value>bb_rate</value>
+      <value>samp_rate*interp</value>
     </param>
     <param>
       <key>sync</key>
@@ -2026,11 +1767,7 @@
     </param>
   </block>
   <block>
-    <key>wxgui_scopesink2</key>
-    <param>
-      <key>ac_couple</key>
-      <value>False</value>
-    </param>
+    <key>pyqt_cpsd_plot</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -2049,114 +1786,170 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 163)</value>
+      <value>(648, 323)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
       <key>id</key>
-      <value>wxgui_scopesink2_0</value>
+      <value>pyqt_cpsd_plot_0</value>
     </param>
     <param>
-      <key>notebook</key>
+      <key>l</key>
+      <value></value>
+    </param>
+  </block>
+  <block>
+    <key>pyqt_ctime_plot</key>
+    <param>
+      <key>alias</key>
       <value></value>
     </param>
     <param>
-      <key>num_inputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>t_scale</key>
-      <value>0.3e-3</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>Scope Plot</value>
-    </param>
-    <param>
-      <key>trig_mode</key>
-      <value>wxgui.TRIG_MODE_NORM</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>v_offset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>v_scale</key>
-      <value>0.4</value>
-    </param>
-    <param>
-      <key>win_size</key>
+      <key>comment</key>
       <value></value>
     </param>
     <param>
-      <key>xy_mode</key>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
       <value>False</value>
     </param>
     <param>
-      <key>y_axis_label</key>
-      <value>Counts</value>
+      <key>_coordinate</key>
+      <value>(648, 259)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pyqt_ctime_plot_0</value>
+    </param>
+    <param>
+      <key>l</key>
+      <value></value>
+    </param>
+  </block>
+  <block>
+    <key>pyqt_time_plot</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(648, 139)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pyqt_time_plot_0</value>
+    </param>
+    <param>
+      <key>l</key>
+      <value></value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>line</value>
     </param>
   </block>
   <connection>
-    <source_block_id>analog_quadrature_demod_cf_0</source_block_id>
-    <sink_block_id>fir_filter_xxx_0</sink_block_id>
+    <source_block_id>bits_to_symbols</source_block_id>
+    <sink_block_id>fsk_modulator_0</sink_block_id>
+    <source_key>pdus</source_key>
+    <sink_key>pdus</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>bits_to_symbols</source_block_id>
+    <sink_block_id>pyqt_time_plot_0</sink_block_id>
+    <source_key>pdus</source_key>
+    <sink_key>pdus</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_message_strobe_0</source_block_id>
+    <sink_block_id>hubsan_build_packet_b_0</sink_block_id>
+    <source_key>strobe</source_key>
+    <sink_key>generate</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>es_source_0</source_block_id>
+    <sink_block_id>interp_fir_filter_xxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>digital_binary_slicer_fb_0</source_block_id>
-    <sink_block_id>hubsan_packet_decoder_b_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <source_block_id>fsk_modulator</source_block_id>
+    <sink_block_id>es_source_0</sink_block_id>
+    <source_key>pdus</source_key>
+    <sink_key>schedule_event</sink_key>
   </connection>
   <connection>
-    <source_block_id>digital_clock_recovery_mm_xx_0</source_block_id>
-    <sink_block_id>digital_binary_slicer_fb_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <source_block_id>fsk_modulator</source_block_id>
+    <sink_block_id>pyqt_cpsd_plot_0</sink_block_id>
+    <source_key>pdus</source_key>
+    <sink_key>cpdus</sink_key>
   </connection>
   <connection>
-    <source_block_id>fir_filter_xxx_0</source_block_id>
-    <sink_block_id>digital_clock_recovery_mm_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <source_block_id>fsk_modulator</source_block_id>
+    <sink_block_id>pyqt_ctime_plot_0</sink_block_id>
+    <source_key>pdus</source_key>
+    <sink_key>cpdus</sink_key>
   </connection>
   <connection>
-    <source_block_id>fir_filter_xxx_0</source_block_id>
-    <sink_block_id>wxgui_scopesink2_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <source_block_id>fsk_modulator_0</source_block_id>
+    <sink_block_id>fsk_modulator</sink_block_id>
+    <source_key>pdus</source_key>
+    <sink_key>pdus</sink_key>
   </connection>
   <connection>
-    <source_block_id>freq_xlating_fir_filter_xxx_0</source_block_id>
-    <sink_block_id>analog_quadrature_demod_cf_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <source_block_id>hubsan_build_packet_b_0</source_block_id>
+    <sink_block_id>bits_to_symbols</sink_block_id>
+    <source_key>pdus</source_key>
+    <sink_key>pdus</sink_key>
   </connection>
   <connection>
-    <source_block_id>hubsan_packet_decoder_b_0</source_block_id>
-    <sink_block_id>blocks_message_debug_0</sink_block_id>
+    <source_block_id>hubsan_joystick_source_f_0</source_block_id>
+    <sink_block_id>hubsan_build_packet_b_0</sink_block_id>
     <source_key>out</source_key>
-    <sink_key>print</sink_key>
+    <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>osmosdr_source_0</source_block_id>
-    <sink_block_id>freq_xlating_fir_filter_xxx_0</sink_block_id>
+    <source_block_id>interp_fir_filter_xxx_0</source_block_id>
+    <sink_block_id>osmosdr_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
