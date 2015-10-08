@@ -18,17 +18,17 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_JOYSTICK_JOYSTICK_SOURCE_F_IMPL_H
-#define INCLUDED_JOYSTICK_JOYSTICK_SOURCE_F_IMPL_H
+#ifndef INCLUDED_HUBSAN_JOYSTICK_SOURCE_F_IMPL_H
+#define INCLUDED_HUBSAN_JOYSTICK_SOURCE_F_IMPL_H
 
-#include <joystick/joystick_source_f.h>
+#include <hubsan/joystick_source_f.h>
 #include <libevdev-1.0/libevdev/libevdev.h>
 #include <boost/thread.hpp>
 #include <pmt/pmt.h>
 #include <sys/time.h>
 
 namespace gr {
-  namespace joystick {
+  namespace hubsan {
 
     class joystick_source_f_impl : public joystick_source_f
     {
@@ -59,8 +59,8 @@ namespace gr {
       void update_controls();
     };
 
-  } // namespace joystick
+  } // namespace hubsan
 } // namespace gr
 
-#endif /* INCLUDED_JOYSTICK_JOYSTICK_SOURCE_F_IMPL_H */
+#endif /* INCLUDED_HUBSAN_JOYSTICK_SOURCE_F_IMPL_H */
 

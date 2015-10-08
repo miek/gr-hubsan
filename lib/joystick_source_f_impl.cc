@@ -26,7 +26,7 @@
 #include "joystick_source_f_impl.h"
 
 namespace gr {
-  namespace joystick {
+  namespace hubsan {
 
     joystick_source_f::sptr
     joystick_source_f::make()
@@ -134,6 +134,6 @@ namespace gr {
       } while (stop == 0 && (rc == 1 || rc == 0 ||  rc == -EAGAIN));
       printf("Thread died %d", rc);
     }
-  } /* namespace joystick */
+  } /* namespace hubsan */
 } /* namespace gr */
 

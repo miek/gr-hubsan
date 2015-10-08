@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-  <name>build_packet_b</name>
+  <name>Hubsan packet encoder</name>
   <key>hubsan_build_packet_b</key>
   <category>hubsan</category>
   <import>import hubsan</import>

@@ -19,38 +19,38 @@
  */
 
 
-#ifndef INCLUDED_JOYSTICK_JOYSTICK_SOURCE_F_H
-#define INCLUDED_JOYSTICK_JOYSTICK_SOURCE_F_H
+#ifndef INCLUDED_HUBSAN_JOYSTICK_SOURCE_F_H
+#define INCLUDED_HUBSAN_JOYSTICK_SOURCE_F_H
 
-#include <joystick/api.h>
+#include <hubsan/api.h>
 #include <gnuradio/sync_block.h>
 
 namespace gr {
-  namespace joystick {
+  namespace hubsan {
 
     /*!
      * \brief <+description of block+>
-     * \ingroup joystick
+     * \ingroup hubsan
      *
      */
-    class JOYSTICK_API joystick_source_f : virtual public gr::block
+    class HUBSAN_API joystick_source_f : virtual public gr::block
     {
      public:
       typedef boost::shared_ptr<joystick_source_f> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of joystick::joystick_source_f.
+       * \brief Return a shared_ptr to a new instance of hubsan::joystick_source_f.
        *
-       * To avoid accidental use of raw pointers, joystick::joystick_source_f's
+       * To avoid accidental use of raw pointers, hubsan::joystick_source_f's
        * constructor is in a private implementation
-       * class. joystick::joystick_source_f::make is the public interface for
+       * class. hubsan::joystick_source_f::make is the public interface for
        * creating new instances.
        */
       static sptr make();
     };
 
-  } // namespace joystick
+  } // namespace hubsan
 } // namespace gr
 
-#endif /* INCLUDED_JOYSTICK_JOYSTICK_SOURCE_F_H */
+#endif /* INCLUDED_HUBSAN_JOYSTICK_SOURCE_F_H */
 

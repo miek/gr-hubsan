@@ -37,7 +37,7 @@ if(NOT hubsan_sources)
 endif(NOT hubsan_sources)
 
 add_library(gnuradio-hubsan SHARED ${hubsan_sources})
-target_link_libraries(gnuradio-hubsan ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+target_link_libraries(gnuradio-hubsan evdev ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
 set_target_properties(gnuradio-hubsan PROPERTIES DEFINE_SYMBOL "gnuradio_hubsan_EXPORTS")
 
 if(APPLE)

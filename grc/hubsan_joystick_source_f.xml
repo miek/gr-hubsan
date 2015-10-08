@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
   <name>Joystick Source</name>
-  <key>joystick_joystick_source_f</key>
-  <category>joystick</category>
-  <import>import joystick</import>
-  <make>joystick.joystick_source_f()</make>
+  <key>hubsan_joystick_source_f</key>
+  <category>hubsan</category>
+  <import>import hubsan</import>
+  <make>hubsan.joystick_source_f()</make>
   <source>
     <name>out</name>
     <type>message</type>
