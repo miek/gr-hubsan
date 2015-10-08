@@ -23,7 +23,7 @@
 #define INCLUDED_HUBSAN_BUILD_PACKET_B_H
 
 #include <hubsan/api.h>
-#include <gnuradio/sync_block.h>
+#include <gnuradio/block.h>
 
 namespace gr {
   namespace hubsan {
@@ -33,7 +33,7 @@ namespace gr {
      * \ingroup hubsan
      *
      */
-    class HUBSAN_API build_packet_b : virtual public gr::sync_block
+    class HUBSAN_API build_packet_b : virtual public gr::block
     {
      public:
       typedef boost::shared_ptr<build_packet_b> sptr;

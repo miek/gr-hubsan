@@ -40,12 +40,7 @@ namespace gr {
       build_packet_b_impl(unsigned int sps, uint32_t a7105_id, uint32_t tx_id);
       ~build_packet_b_impl();
 
-      // Where all the action really happens
-      int work(int noutput_items,
-	       gr_vector_const_void_star &input_items,
-	       gr_vector_void_star &output_items);
-
-      void build_packet();
+      void build_packet(pmt::pmt_t msg);
       uint8_t generate_crc();
       void handle_control_msg(pmt::pmt_t msg);
     };
