@@ -1,0 +1,13 @@
+diff --git a/host/libhackrf/src/hackrf.c b/host/libhackrf/src/hackrf.c
+index dcba7f6..6c67ecb 100644
+--- a/host/libhackrf/src/hackrf.c
++++ b/host/libhackrf/src/hackrf.c
+@@ -519,7 +519,7 @@ static int hackrf_open_setup(libusb_device_handle* usb_device, hackrf_device** d
+        lib_device->buffer_size = 16384;
+        */
+        lib_device->transfer_count = 4;
+-       lib_device->buffer_size = 262144; /* 1048576; */
++       lib_device->buffer_size = 16384; /* 1048576; */
+        lib_device->streaming = false;
+        do_exit = false;
+ 

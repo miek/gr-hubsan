@@ -1,0 +1,26 @@
+diff --git a/lib/hackrf/hackrf_sink_c.cc b/lib/hackrf/hackrf_sink_c.cc
+index 7aa864d..4e3a2ff 100644
+--- a/lib/hackrf/hackrf_sink_c.cc
++++ b/lib/hackrf/hackrf_sink_c.cc
+@@ -51,7 +51,7 @@
+ 
+ using namespace boost::assign;
+ 
+-#define BUF_LEN  (16 * 32 * 512) /* must be multiple of 512 */
++#define BUF_LEN  (16 * 2 * 512) /* must be multiple of 512 */
+ #define BUF_NUM   15
+ 
+ #define BYTES_PER_SAMPLE  2 /* HackRF device consumes 8 bit unsigned IQ data */
+diff --git a/lib/hackrf/hackrf_source_c.cc b/lib/hackrf/hackrf_source_c.cc
+index 81ddad6..0555d3f 100644
+--- a/lib/hackrf/hackrf_source_c.cc
++++ b/lib/hackrf/hackrf_source_c.cc
+@@ -44,7 +44,7 @@
+ 
+ using namespace boost::assign;
+ 
+-#define BUF_LEN  (16 * 32 * 512) /* must be multiple of 512 */
++#define BUF_LEN  (16 * 2 * 512) /* must be multiple of 512 */
+ #define BUF_NUM   15
+ 
+ #define BYTES_PER_SAMPLE  2 /* HackRF device produces 8 bit unsigned IQ data */
