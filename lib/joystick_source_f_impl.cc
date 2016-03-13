@@ -22,6 +22,7 @@
 #include "config.h"
 #endif
 
+#include <fcntl.h>
 #include <gnuradio/io_signature.h>
 #include "joystick_source_f_impl.h"
 
